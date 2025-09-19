@@ -15,7 +15,7 @@ import androidx.fragment.app.DialogFragment;
 
 public class AddCityFragment extends DialogFragment {
 
-    interface AddCityDialogListener{
+    public interface AddCityDialogListener{
         void addCity(City city);
     }
     private AddCityDialogListener listener;
@@ -37,8 +37,7 @@ public class AddCityFragment extends DialogFragment {
                 LayoutInflater.from(getContext()).inflate(R.layout.fragment_add_city, null);
         EditText editCityName = view.findViewById(R.id.edit_text_city_text);
         EditText editProvinceName = view.findViewById(R.id.edit_text_province_text);
-        AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         return builder
                 .setView(view)
                 .setTitle("Add a city")
